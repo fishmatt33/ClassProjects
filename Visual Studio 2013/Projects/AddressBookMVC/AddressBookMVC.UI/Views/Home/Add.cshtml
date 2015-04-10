@@ -1,0 +1,31 @@
+﻿@model AddressBookMVC.UI.Models.Contact
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <div>
+        <h1>Add Contact</h1>
+        <h3>@Html.ActionLink("Back to List", "Index", "Home")</h3>
+        @using (Html.BeginForm("AddContact", "Home", FormMethod.Post))
+        {
+            <p>
+                <label>Name</label>
+                @Html.TextBoxFor(m => m.Name);
+            </p>
+            <p>
+                <label>Phone</label>
+                @Html.TextBoxFor(m => m.PhoneNumber)
+            </p>
+            <button>Save</button>
+        }
+     </div>
+</body>
+</html>

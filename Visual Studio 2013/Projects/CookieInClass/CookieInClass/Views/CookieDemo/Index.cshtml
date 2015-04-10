@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cookie List</h2>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Value</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (string cookieNeme in this.Request.Cookies)
+    {
+        <tr>
+            <td>@cookieNeme</td>
+            <td style="max-width: 200">@this.Request.Cookies[cookieNeme].Value</td>
+            <td>
+                @using (Html.BeginForm("DeleteCookie", "CookieDemo", new {id = cookieNeme}, FormMethod.Post))
+                {
+                    <button class="btn btn-xs btn-danger">Delete</button>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+
+</table>
+@using (Html.BeginForm("AddCookie", "CookieDemo", FormMethod.Post))
+{
+    <p>
+        Cookie Name: @Html.TextBox("cookieName")
+    </p>
+    <p>
+        Cookie Value: @Html.TextBox("cookieValue")
+    </p>
+    <p>
+        <button class="btn btn-default btn-success">More Cookie!</button>
+    </p>
+}

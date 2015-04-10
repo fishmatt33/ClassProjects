@@ -1,0 +1,27 @@
+﻿@model CookieTesting.Models.Cookie
+    @{
+        ViewBag.Title = "Index";
+    }
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css></head>
+<body>
+    <h2>Index</h2>
+    <ul>
+        <li>@Html.ActionLink("Write Cookie", "WriteCookie", "Cookie")</li>
+        <li>@Html.ActionLink("Read Cookie", "ReadCookie", "Cookie")</li>
+    </ul>
+
+       
+</body>
+</html>

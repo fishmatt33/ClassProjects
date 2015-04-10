@@ -1,0 +1,16 @@
+﻿@model CookieTesting.Models.Cookie
+@{
+    ViewBag.Title = "ReadCookie";
+}
+
+<h2>ReadCookie</h2>
+
+<div>
+    @Html.DisplayFor(c => c.Name)
+</div>
+
+<div>
+    @Html.DisplayFor(c => c.Value)
+</div>
+
+@Html.ActionLink("Home", "Index", "Home")

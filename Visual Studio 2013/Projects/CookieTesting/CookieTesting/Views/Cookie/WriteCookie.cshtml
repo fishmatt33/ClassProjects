@@ -1,0 +1,19 @@
+﻿@model CookieTesting.Models.Cookie
+@{
+    ViewBag.Title = "WriteCookie";
+}
+
+<h2>WriteCookie</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        <label>Name</label>
+        @Html.TextBoxFor(c => c.Name)
+    </p>
+    <p>
+        <label>Email</label>
+        @Html.TextBoxFor(c => c.Value)
+    </p>
+    <div><button type="submit">Store In Cookie</button></div>
+}
