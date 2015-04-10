@@ -1,0 +1,83 @@
+﻿@model DvdLibrary.UI.Models.MovieProperties
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h1>Details</h1>
+        <h3>@Html.ActionLink("Back to List", "Index", "Home")</h3>
+        <form action="/Home/Details" method="POST">
+
+
+            <div class="table responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Director</th>
+                        <th>Year</th>
+                        <th>Rating</th>
+                        <th>Runtime</th>
+                        <th>Actors</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>@Model.Title</td>
+                        <td>@Model.Director</td>
+                        <td>@Model.Year</td>
+                        <td>@Model.Rating</td>
+                        <td>@Model.Runtime</td>
+                        <td>@Model.Actor</td>
+                        
+                    </tr>
+                    </tbody>
+                    
+                </table>
+            </div>
+
+
+
+
+            @*Testing panel list
+                <div class="panel panel-default">
+                    <div class="panel heading">Title</div>
+                    <div class="panel body">@Model.Director, @Model.Year, @Model.Rating, @Model.Runtime, @Model.Actor</div>
+                </div>*@
+
+            @*Testing basic layout options
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Director</th>
+                            <th>Year</th>
+                            <th>Rating</th>
+                            <th>Runtime</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Model.Title</td>
+                                <td>@Model.Director</td>
+                                <td>@Model.Year</td>
+                                <td>@Model.Rating</td>
+                                <td>@Model.Runtime</td>
+                            </tr>
+                        </tbody>
+                    </table>*@
+        </form>
+    </div>
+</body>
+</html>

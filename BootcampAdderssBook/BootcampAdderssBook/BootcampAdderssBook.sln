@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootcampAdderssBook", "BootcampAdderssBook\BootcampAdderssBook.csproj", "{03F1FF2B-5650-43D1-B587-277F78461A58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBook.Data", "AddressBook.Data\AddressBook.Data.csproj", "{FA78C423-3639-4BB9-B313-17D9F990CD5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBook.Models", "AddressBook.Models\AddressBook.Models.csproj", "{086F52F0-57ED-4670-BAF9-3E2944DE0FAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBook.Tests", "AddressBook.Tests\AddressBook.Tests.csproj", "{414DC278-8589-4902-BA7C-6854CD6524BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03F1FF2B-5650-43D1-B587-277F78461A58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F1FF2B-5650-43D1-B587-277F78461A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F1FF2B-5650-43D1-B587-277F78461A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F1FF2B-5650-43D1-B587-277F78461A58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA78C423-3639-4BB9-B313-17D9F990CD5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA78C423-3639-4BB9-B313-17D9F990CD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA78C423-3639-4BB9-B313-17D9F990CD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA78C423-3639-4BB9-B313-17D9F990CD5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086F52F0-57ED-4670-BAF9-3E2944DE0FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086F52F0-57ED-4670-BAF9-3E2944DE0FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086F52F0-57ED-4670-BAF9-3E2944DE0FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086F52F0-57ED-4670-BAF9-3E2944DE0FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{414DC278-8589-4902-BA7C-6854CD6524BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{414DC278-8589-4902-BA7C-6854CD6524BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{414DC278-8589-4902-BA7C-6854CD6524BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{414DC278-8589-4902-BA7C-6854CD6524BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

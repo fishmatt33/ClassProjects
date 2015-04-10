@@ -1,0 +1,67 @@
+﻿@model DvdLibrary.UI.Models.MovieProperties
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="/TextColor/ErrorColorText.css">
+
+    <title>Add</title>
+</head>
+<body>
+    <div>
+        <h1>Add Movies</h1>
+        <h3>@Html.ActionLink("Back to List", "Index", "Home")</h3>
+        @using (Html.BeginForm("AddMovie", "Home", FormMethod.Post))
+        {
+            
+            <div style="padding: 25px">
+                <p>
+                    @Html.ValidationMessageFor(m => m.Title)
+                    <br />
+                    <b>Title:</b> @Html.EditorFor(m => m.Title)
+                </p>
+                <p>
+                    @Html.ValidationMessageFor(m => m.Director)
+                    <br />
+                    <b>Director:</b> @Html.EditorFor(m => m.Director)
+                </p>
+                <p>
+                    @Html.ValidationMessageFor(m => m.Year)
+                    <br />
+                    <b>Year Made:</b> @Html.EditorFor(m => m.Year)
+                </p>
+                <p>
+                    @Html.ValidationMessageFor(m => m.Rating)
+                    <br />
+                    <b>Rating:</b> @Html.DropDownListFor(m => m.Rating, new SelectListItem[5]
+                {
+                new SelectListItem {Text = "Rated G", Value = "G"},
+                new SelectListItem {Text = "Rated PG", Value = "PG"},
+                new SelectListItem {Text = "Rated PG-13", Value = "PG-13"},
+                new SelectListItem {Text = "Rated R", Value = "R"},
+                new SelectListItem {Text= "Rated NR", Value = "NR"}
+                }, "Select Rating")
+                </p>
+                <p>
+                    @Html.ValidationMessageFor(m => m.Runtime)
+                    <br />
+                    <b>Run Time:</b> @Html.EditorFor(m => m.Runtime)
+                </p>
+                <p>
+                    @Html.ValidationMessageFor(m => m.Actor)
+                    <br />
+                    <b>Actor List:</b> @Html.TextAreaFor(m => m.Actor)
+                </p>
+                <button>Save</button>
+                @*<span class="glyphicon glyphicon-floppy-disk "></span>*@
+            </div>
+        }
+    </div>
+</body>
+</html>

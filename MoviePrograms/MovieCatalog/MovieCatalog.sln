@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.UI", "MovieCatalog.UI\MovieCatalog.UI.csproj", "{A9680D16-06EF-4522-8379-9C4BB24C24F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.Models", "MovieCatalog.Models\MovieCatalog.Models.csproj", "{07DBA83E-E4E3-4D75-80CF-E22CD5A2F95F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieCatalog.Data", "MovieCatalog.Data\MovieCatalog.Data.csproj", "{D32D2B3E-4DDD-400B-B8BF-E4D5CF5BD27D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9680D16-06EF-4522-8379-9C4BB24C24F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9680D16-06EF-4522-8379-9C4BB24C24F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9680D16-06EF-4522-8379-9C4BB24C24F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9680D16-06EF-4522-8379-9C4BB24C24F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07DBA83E-E4E3-4D75-80CF-E22CD5A2F95F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07DBA83E-E4E3-4D75-80CF-E22CD5A2F95F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07DBA83E-E4E3-4D75-80CF-E22CD5A2F95F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07DBA83E-E4E3-4D75-80CF-E22CD5A2F95F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D32D2B3E-4DDD-400B-B8BF-E4D5CF5BD27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D32D2B3E-4DDD-400B-B8BF-E4D5CF5BD27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D32D2B3E-4DDD-400B-B8BF-E4D5CF5BD27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D32D2B3E-4DDD-400B-B8BF-E4D5CF5BD27D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

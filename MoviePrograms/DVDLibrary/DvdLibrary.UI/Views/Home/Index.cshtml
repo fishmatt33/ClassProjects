@@ -1,0 +1,102 @@
+﻿@using System.Security.Policy
+@model List<DvdLibrary.UI.Models.MovieProperties>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width" />
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")" type="text/javascript"></script>
+    <script src="/Scripts/bootstrap.js" type="text/javascript"></script>
+    <script src="/Scripts/bootstrap-confirm.js" type="text/javascript"></script>
+    <script src="/Scripts/DeleteMovie.js" type="text/javascript"></script>
+
+    <title>Index</title>
+</head>
+<body>
+<div>
+    <h1>Movie Library</h1>
+    <table border="2">
+        <thead>
+        <tr>
+            <th>
+                <p class="text-center">Search Options</p>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <form action="/Home/SearchResults" method="POST">
+
+                    @Html.RadioButton("searchType", "Title")<label>Title</label>
+
+                    @Html.RadioButton("searchType", "Director")<label>Director</label>
+
+                    @Html.RadioButton("searchType", "Actor")<label>Actor</label>
+
+                    <div class="input-group">
+
+                        <input type="search" name="searchBy" class="form-control" placeholder="Search for..." title="Press Enter to search"/>
+                        <span class="input-group-btn">
+                                    <button class="btn btn-info">Go!</button>
+                                </span>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    @*Space for adding a movie to the library*@
+    <h3>@Html.ActionLink("Add a new movie", "Add", "Home")</h3>
+    @if (Model.Any())
+    {
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Titles</th>
+                <th>Director</th>
+                <th>Year</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var movie in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(@movie.Title, "Details", "Home", new {id = @movie.MovieId}, null)
+                    </td>
+                    <td>@movie.Director</td>
+                    <td>@movie.Year</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Home", new {id = @movie.MovieId}, new {@class = "btn btn-info"})
+                    </td>
+                    <td>
+
+                        <form action="/Home/DeleteMovie" method="POST" class="DeleteForm">
+                            <input type="hidden" name="MovieId" id="MovieId" value="@movie.MovieId"/>
+                            <button class="btn btn-danger">Delete</button>
+                           
+                        </form>
+
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>You do not have any movies in the library. Go add one!</p>
+    }
+</div>
+   
+</body>
+</html>

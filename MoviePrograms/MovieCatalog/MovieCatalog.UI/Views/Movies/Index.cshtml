@@ -1,0 +1,136 @@
+﻿@using System.Collections.Specialized
+@model IEnumerable<MovieCatalog.Models.Tables.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RunTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @if (item.ReleaseDate.HasValue)
+                {
+                    @item.ReleaseDate.Value.ToString("d")
+                }
+            </td>
+            <td>
+                <button class="btn btn-default" onclick="edit(@item.MovieID)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" onclick="delete(@item.MovieID)">Delete</button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit</h4>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="EditMovieId"/>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" id="EditTitle" />
+                </div>
+                <div class="form-group">
+                    <label>Run Time</label>
+                    <input type="text" class="form-control" id="EditRuntime" />
+                </div>
+                <div class="form-group">
+                    <label>Rating</label>
+                    <input type="text" class="form-control" id="EditRating" />
+                </div>
+                <div class="form-group">
+                    <label>Release Date</label>
+                    <input type="text" class="form-control" id="EditReleaseDate" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="saveEdit()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        var url = "/api/movieapi/";
+
+        function edit(id) {
+            $.getJSON(url + id)
+                .done(function(data) {
+                    $('#EditMovieId').val(data.MovieID);
+                    $('#EditTitle').val(data.Title);
+                    $('#EditRating').val(data.Rating);
+                    $('#EditRuntime').val(data.RunTime);
+                    var date = new Date(data.ReleaseDate);
+                    $('#EditReleaseDate').val(date.getMonth() + '/' + date.getDay() + '/' + date.getFullYear());
+
+                    $('#editModal').modal('show');
+                })
+                .fail(function(jqXhr, status, err) {
+                    alert(status + ' - ' + err);
+                });
+        }
+
+        function saveEdit() {
+            var movie = {};
+
+            movie.MovieID = $('#EditMovieId').val();
+            movie.Title = $('#EditTitle').val();
+            movie.Rating = $('#EditRating').val();
+            movie.RunTime = $('#EditRuntime').val();
+            movie.ReleaseDate = $('#EditReleaseDate').val();
+
+            $.ajax({
+                url: url,
+                type: 'PUT',
+                data: movie,
+                success: function (data) {
+                    alert('Saved!');
+                }
+            });
+
+            $('#editModal').modal('hide');
+        };
+    </script>
+}
